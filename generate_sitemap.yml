@@ -29,13 +29,13 @@ jobs:
         uses: cicirello/generate-sitemap@v1.9.1
         with:
           # The url of your webpage
-          base-url-path: https://github.com/AdminSwann/IALA_TEST/tree/main
+          base-url-path: https://github.com/AdminSwann/IALA_TEST/main/
           additional-extensions: txt
           
       - name: generate-mrn-map
         uses: AdminSwann/IALA_TEST_action@0.0.3
         with:
-          base-url-path: https://github.com/AdminSwann/IALA_TEST/tree/main
+          base-url-path: https://github.com/AdminSwann/IALA_TEST/main/
             
       - run: |
           mv sitemap.xml sitemap.xml.tmp
