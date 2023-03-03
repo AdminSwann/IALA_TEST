@@ -29,19 +29,19 @@ jobs:
         uses: cicirello/generate-sitemap@v1.8.1
         with:
           # The url of your webpage
-          base-url-path: https://github.com/AdminSwann/IALA_TEST/main/
+          base-url-path: https://raw.githubusercontent.com/AdminSwann/IALA_TEST/main/
           additional-extensions: txt
           
       - name: generate-mrn-map
-        uses: Digital-Maritime-Consultancy/MRR_action@0.0.3
+        uses: AdminSwann/IALA_TEST_action@0.0.3
         with:
-          base-url-path: https://github.com/AdminSwann/IALA_TEST/main/
+          base-url-path: https://raw.githubusercontent.com/AdminSwann/IALA_TEST/main/
             
       - run: |
           mv sitemap.xml sitemap.xml.tmp
           mv mrn-map.json mrn-map.json.tmp
-          git config user.email mrr-bot@dmc.international
-          git config user.name mrr-bot
+          git config user.email swann.martineau@iala-aism.org
+          git config user.name AdminSwann
           git fetch
           git checkout sitemap
           mv sitemap.xml.tmp sitemap.xml
