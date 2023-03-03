@@ -26,7 +26,7 @@ jobs:
           fetch-depth: 0
 
       - name: generate-sitemap
-        uses: cicirello/generate-sitemap@v1.8.1
+        uses: cicirello/generate-sitemap@v1.9.1
         with:
           # The url of your webpage
           base-url-path: https://github.com/AdminSwann/IALA_TEST/tree/main
