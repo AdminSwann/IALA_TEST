@@ -16,7 +16,7 @@ jobs:
         fetch-depth: 0 
 
     - name: Generate the sitemap
-      id: sitemap
+      id: sitemap_guidelines
       uses: cicirello/generate-sitemap@v1
       with:
         base-url-path: ./
@@ -26,12 +26,12 @@ jobs:
         echo "sitemap-path = ${{ steps.sitemap.outputs.sitemap-path }}"
         echo "url-count = ${{ steps.sitemap.outputs.url-count }}"
         echo "excluded-count = ${{ steps.sitemap.outputs.excluded-count }}"
-        mv sitemap.xml sitemap.xml.tmp
+        mv sitemap_guidelines.xml sitemap_guidelines.xml.tmp
         git config user.email swann.martineau@iala-aism.org
         git config user.name AdminSwann
         git fetch
         git checkout guidelines
-        mv sitemap.xml.tmp sitemap_guidelines.xml
+        mv sitemap_guidelines.xml.tmp sitemap_guidelines.xml
         git add sitemap_guidelines.xml
         git commit -m "New sitemas"
         git push
