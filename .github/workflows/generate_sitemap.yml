@@ -19,7 +19,7 @@ jobs:
       id: sitemap
       uses: cicirello/generate-sitemap@v1.9.1
       with:
-        base-url-path: https://github.com/AdminSwann/IALA_TEST
+        base-url-path: https://github.com/AdminSwann/IALA_TEST/tree/main
         additional-extensions: doc docx ppt pptx xls xlsx
 
     - name: Output stats
