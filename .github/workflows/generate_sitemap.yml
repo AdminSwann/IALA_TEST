@@ -25,8 +25,6 @@ jobs:
     - name: Output stats
       run: |
         mv sitemap.xml sitemap.xml.tmp
-        git config user.email mrr-bot@dmc.international
-        git config user.name mrr-bot
         git fetch
         git checkout sitemap
         mv sitemap.xml.tmp sitemap.xml
