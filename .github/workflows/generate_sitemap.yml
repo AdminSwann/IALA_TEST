@@ -19,20 +19,11 @@ jobs:
       id: sitemap
       uses: cicirello/generate-sitemap@v1
       with:
-        base-url-path: https://github.com/AdminSwann/IALA_TEST/main
+        base-url-path: https://github.com/AdminSwann/IALA_TEST/tree/main
         additional-extensions: doc docx ppt pptx xls xlsx
 
     - name: Output stats
-            
       run: |
-          mv sitemap.xml sitemap.xml.tmp
-          git config user.email swann.martineau@iala-aism.org
-          git config user.name AdminSwann
-          git fetch
-          git checkout sitemap
-          mv sitemap.xml.tmp sitemap.xml
-          git add sitemap.xml
-          if [[ -z $(git --no-pager diff HEAD) ]]; then exit 0; fi
-          git commit -m "New sitemaps"
-          git push
-          shell: bash
+        echo "sitemap-path = ${{ steps.sitemap.outputs.sitemap-path }}"
+        echo "url-count = ${{ steps.sitemap.outputs.url-count }}"
+        echo "excluded-count = ${{ steps.sitemap.outputs.excluded-count }}"
