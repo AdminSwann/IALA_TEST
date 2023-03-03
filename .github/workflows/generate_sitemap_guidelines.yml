@@ -32,6 +32,6 @@ jobs:
         git fetch
         git checkout guidelines
         mv sitemap.xml.tmp sitemap_guidelines.xml
-        git add sitemap.xml
+        git add sitemap_guidelines.xml
         git commit -m "New sitemaps"
         git push
